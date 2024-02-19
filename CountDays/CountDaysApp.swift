@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct CountDaysApp: App {
+struct Count_DaysApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DayView()
         }
     }
 }

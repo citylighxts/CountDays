@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		2BDD57B02B83DA3000F59920 /* CountDaysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDD57AF2B83DA3000F59920 /* CountDaysApp.swift */; };
-		2BDD57B22B83DA3000F59920 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDD57B12B83DA3000F59920 /* ContentView.swift */; };
 		2BDD57B42B83DA3200F59920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BDD57B32B83DA3200F59920 /* Assets.xcassets */; };
 		2BDD57B72B83DA3200F59920 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BDD57B62B83DA3200F59920 /* Preview Assets.xcassets */; };
+		2BDD57BE2B83DA5D00F59920 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDD57BD2B83DA5D00F59920 /* DayView.swift */; };
+		2BDD57C02B83DA6400F59920 /* NewDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDD57BF2B83DA6400F59920 /* NewDayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2BDD57AC2B83DA3000F59920 /* CountDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BDD57AF2B83DA3000F59920 /* CountDaysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDaysApp.swift; sourceTree = "<group>"; };
-		2BDD57B12B83DA3000F59920 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2BDD57B32B83DA3200F59920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BDD57B62B83DA3200F59920 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2BDD57BD2B83DA5D00F59920 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		2BDD57BF2B83DA6400F59920 /* NewDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +54,10 @@
 			isa = PBXGroup;
 			children = (
 				2BDD57AF2B83DA3000F59920 /* CountDaysApp.swift */,
-				2BDD57B12B83DA3000F59920 /* ContentView.swift */,
 				2BDD57B32B83DA3200F59920 /* Assets.xcassets */,
 				2BDD57B52B83DA3200F59920 /* Preview Content */,
+				2BDD57BD2B83DA5D00F59920 /* DayView.swift */,
+				2BDD57BF2B83DA6400F59920 /* NewDayView.swift */,
 			);
 			path = CountDays;
 			sourceTree = "<group>";
@@ -137,8 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BDD57B22B83DA3000F59920 /* ContentView.swift in Sources */,
 				2BDD57B02B83DA3000F59920 /* CountDaysApp.swift in Sources */,
+				2BDD57C02B83DA6400F59920 /* NewDayView.swift in Sources */,
+				2BDD57BE2B83DA5D00F59920 /* DayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
