@@ -22,7 +22,7 @@ struct DayView: View {
                     .tint(.red)
                     .padding(.bottom)
                 
-                Text("\(viewModel.monthsFromSelected) months \(viewModel.daysFromSelected) days from \(viewModel.formattedDate)")
+                Text("\(viewModel.months) months \(viewModel.days) days from \(viewModel.formattedDate)")
                     .font(.system(size: 25))
                     .bold()
             }

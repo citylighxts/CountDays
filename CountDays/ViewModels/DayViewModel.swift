@@ -2,18 +2,21 @@ import Foundation
 import SwiftUI
 
 class DayViewModel: ObservableObject {
+    @AppStorage ("days") var days: Int = 0
+    @AppStorage ("months") var months: Int = 0
+    
     @Published var selectedDate: Date = Date() {
         didSet {
             print(selectedDate)
             formattedDate = formatDate(selectedDate)
-            daysFromSelected = calculateDaysFromSelected(selectedDate)
-            monthsFromSelected = calculateMonthsFromSelected(selectedDate)
+            days += calculateDaysFromSelected(selectedDate)
+            months += calculateMonthsFromSelected(selectedDate)
         }
     }
     
     var selectedDateBinding: Binding<Date> {
-            Binding(get: { self.selectedDate }, set: { self.selectedDate = $0 })
-        }
+        Binding(get: { self.selectedDate }, set: { self.selectedDate = $0 })
+    }
     
     init() {
         formattedDate = formatDate(currentDate)
@@ -21,8 +24,6 @@ class DayViewModel: ObservableObject {
     }
 
     @Published var formattedDate: String = ""
-    @Published var daysFromSelected: Int = 0
-    @Published var monthsFromSelected: Int = 0
 
     let currentDate = Date()
     let calendar = Calendar.current
