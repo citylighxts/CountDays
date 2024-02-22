@@ -1,16 +1,21 @@
 import Foundation
 import SwiftUI
+import WidgetKit
 
 class DayViewModel: ObservableObject {
-    @AppStorage ("days") var days: Int = 0
-    @AppStorage ("months") var months: Int = 0
+    @AppStorage ("years", store: UserDefaults(suiteName: "group.com.hana.CountDays")) var years: Int = 0
+    @AppStorage ("months", store: UserDefaults(suiteName: "group.com.hana.CountDays")) var months: Int = 0
+    @AppStorage ("days", store: UserDefaults(suiteName: "group.com.hana.CountDays")) var days: Int = 0
+    @AppStorage ("formattedDate", store: UserDefaults(suiteName: "group.com.hana.CountDays")) var formattedDate: String = ""
     
     @Published var selectedDate: Date = Date() {
         didSet {
-            print(selectedDate)
             formattedDate = formatDate(selectedDate)
-            days += calculateDaysFromSelected(selectedDate)
-            months += calculateMonthsFromSelected(selectedDate)
+            integers = calculateIntegers(selectedDate)
+            years = integers[0]
+            months = integers[1]
+            days = integers[2]
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
     
@@ -23,7 +28,7 @@ class DayViewModel: ObservableObject {
         print(selectedDate)
     }
 
-    @Published var formattedDate: String = ""
+    @Published var integers: [Int] = [0, 0]
 
     let currentDate = Date()
     let calendar = Calendar.current
@@ -31,14 +36,10 @@ class DayViewModel: ObservableObject {
     private func formatDate(_ date: Date) -> String {
         DateFormatter.localizedString(from: date, dateStyle: .short, timeStyle: .none)
     }
-
-    private func calculateDaysFromSelected(_ selectedDate: Date) -> Int {
-        let components = calendar.dateComponents([.day], from: selectedDate, to: currentDate)
-        return components.day ?? 0
+    
+    private func calculateIntegers(_ selectedDate: Date) -> [Int] {
+        let components = calendar.dateComponents([.year, .month, .day], from: selectedDate, to: currentDate)
+        return [components.year ?? 0, components.month ?? 0, components.day ?? 0]
     }
-
-    private func calculateMonthsFromSelected(_ selectedDate: Date) -> Int {
-        let components = calendar.dateComponents([.month], from: selectedDate, to: currentDate)
-        return components.month ?? 0
-    }
+    
 }

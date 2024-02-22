@@ -38,7 +38,7 @@ struct NewDayView: View {
                     Button {
                         newDayPresented = false
                         selectedDate = currentDate
-                        print(selectedDate)
+//                        print(selectedDate)
                     } label: {
                         Text("Save")
                             .font(.system(size: 20))

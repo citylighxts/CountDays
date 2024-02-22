@@ -22,9 +22,10 @@ struct DayView: View {
                     .tint(.red)
                     .padding(.bottom)
                 
-                Text("\(viewModel.months) months \(viewModel.days) days from \(viewModel.formattedDate)")
+                Text("\(viewModel.years) years \(viewModel.months) months \(viewModel.days) days from \(viewModel.formattedDate)")
                     .font(.system(size: 25))
                     .bold()
+                    .multilineTextAlignment(.center)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

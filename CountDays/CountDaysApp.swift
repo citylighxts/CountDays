@@ -12,6 +12,7 @@ struct Count_DaysApp: App {
     var body: some Scene {
         WindowGroup {
             DayView()
+//                .defaultAppStorage(UserDefaults(suiteName: "group.com.hana.CountDays")!)
         }
     }
 }
