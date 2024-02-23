@@ -73,8 +73,14 @@ struct widgetExtensionEntryView : View {
 //                .multilineTextAlignment(.center)
             
             Text("Dates from: \(entry.formattedDate)")
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.tint)
+                .tint(.pink)
             
             Text("\(entry.years) years \(entry.months) months \(entry.days) days")
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.tint)
+                .tint(.pink)
         }
     }
 }
@@ -90,7 +96,7 @@ struct widgetExtension: Widget {
             } else {
                 widgetExtensionEntryView(entry: entry)
                     .padding()
-                    .background()
+                    .background(.white)
             }
         }
         .configurationDisplayName("My Widget")

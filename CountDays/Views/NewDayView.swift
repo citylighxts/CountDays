@@ -18,7 +18,6 @@ struct NewDayView: View {
                 DatePicker("Day From", selection: $currentDate)
                     .datePickerStyle(GraphicalDatePickerStyle())
             }
-            .padding(.vertical, 100)
             
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

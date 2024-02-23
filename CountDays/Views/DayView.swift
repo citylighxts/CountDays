@@ -19,7 +19,7 @@ struct DayView: View {
                     .resizable()
                     .frame(width: 80, height: 70)
                     .foregroundStyle(.tint)
-                    .tint(.red)
+                    .tint(.accentColor)
                     .padding(.bottom)
                 
                 Text("\(viewModel.years) years \(viewModel.months) months \(viewModel.days) days from \(viewModel.formattedDate)")
@@ -35,8 +35,6 @@ struct DayView: View {
                         Image(systemName: "pencil")
                             .resizable()
                             .frame(width: 25, height: 25)
-                            .foregroundStyle(.tint)
-                            .tint(.brown)
                     }
                 }
             }
