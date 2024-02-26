@@ -72,12 +72,12 @@ struct widgetExtensionEntryView : View {
 //            Text(entry.date, style: .date)
 //                .multilineTextAlignment(.center)
             
-            Text("Dates from: \(entry.formattedDate)")
+            Text("**\(entry.years)** *years* **\(entry.months)** *months* **\(entry.days)** *days*")
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.tint)
                 .tint(.pink)
             
-            Text("\(entry.years) years \(entry.months) months \(entry.days) days")
+            Text("from: **\(entry.formattedDate)**")
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.tint)
                 .tint(.pink)

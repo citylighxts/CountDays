@@ -22,7 +22,12 @@ struct DayView: View {
                     .tint(.accentColor)
                     .padding(.bottom)
                 
-                Text("\(viewModel.years) years \(viewModel.months) months \(viewModel.days) days from \(viewModel.formattedDate)")
+                Text("**\(viewModel.years)** *years* **\(viewModel.months)** *months* **\(viewModel.days)** *days*")
+                    .font(.system(size: 25))
+                    .bold()
+                    .multilineTextAlignment(.center)
+                
+                Text("from: \(viewModel.formattedDate)")
                     .font(.system(size: 25))
                     .bold()
                     .multilineTextAlignment(.center)
